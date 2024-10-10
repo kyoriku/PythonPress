@@ -1,7 +1,7 @@
+import bcrypt
 from app.db import Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import validates
-import bcrypt
 
 salt = bcrypt.gensalt()
 
@@ -25,3 +25,9 @@ class User(Base):
 
     # encrypt password
     return bcrypt.hashpw(password.encode('utf-8'), salt)
+  
+  def verify_password(self, password):
+    return bcrypt.checkpw(
+      password.encode('utf-8'),
+      self.password.encode('utf-8')
+    )
