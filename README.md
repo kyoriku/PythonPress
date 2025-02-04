@@ -60,10 +60,10 @@ Visit the live website at: [https://pythonpress-64ffcf772c54.herokuapp.com](http
   * Cross-browser compatibility
 
 ## Screenshots
-![Home](assets/screenshots/byteboard-home.png) 
-![Post](assets/screenshots/byteboard-post.png) 
-![Dashboard](assets/screenshots/byteboard-dashboard.png) 
-![Edit Post](assets/screenshots/byteboard-edit-post.png) 
+![Home](assets/screenshots/PythonPress-Home.jpg) 
+![Post](assets/screenshots/PythonPress-Post.jpg) 
+![Dashboard](assets/screenshots/PythonPress-Dashboard.jpg) 
+![Edit](assets/screenshots/PythonPress-Edit.jpg) 
 
 ## Technical Details
 This newsfeed platform was built using the following technologies and features:
@@ -110,17 +110,17 @@ This newsfeed platform was built using the following technologies and features:
 * MySQL (or another SQL database)
 
 ### Setup:
-1. Clone the Repository
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/kyoriku/PythonPress.git 
    ```
 
-2. Navigate to the project directory
+2. **Navigate to the project directory**
    ```bash
    cd PythonPress
    ```
 
-3. Set up a virtual environment
+3. **Set up a virtual environment**
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # for macOS/Linux
@@ -128,12 +128,12 @@ This newsfeed platform was built using the following technologies and features:
    venv\Scripts\activate  # for Windows
    ```
 
-4. Install dependencies
+4. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-5. Configure environment variables
+5. **Configure environment variables**
 
    Create a `.env` file in the root directory with:
    ```bash
@@ -142,24 +142,24 @@ This newsfeed platform was built using the following technologies and features:
 
    *Replace `<username>` with your MySQL username, and `<password>` with your MySQL password*
 
-6. Initialize the database
+6. **Initialize the database**
    ```sql
    mysql -u root -p
    CREATE DATABASE python_press_db;
    ```
 
 ## Usage
-1. Start the application
+1. **Start the application**
    ```bash
    flask run
    ```
 
-2. Navigate to the website
+2. **Navigate to the website**
    ```bash
    http://127.0.0.1:5000
    ```
 
-3. Create an account to:
+3. **Create an account to:**
    * Share and manage your posts
    * Engage with content through comments
    * Upvote interesting articles
