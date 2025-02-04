@@ -23,41 +23,41 @@
 - [Questions](#questions)
 
 ## Description
-Python Newsfeed is a full-stack web application that demonstrates the power of Python web development using Flask. This platform provides a dynamic environment where users can share, discuss, and interact with news content in a social format. Built with modern Python practices and a robust SQL database backend, the application showcases the implementation of user authentication, dynamic content management, and interactive features.
+PythonPress is a full-stack web application that demonstrates modern Python web development using Flask. This platform provides a dynamic environment where users can share, discuss, and interact with news content in a social format. Built with SQLAlchemy ORM and robust authentication practices, the application implements secure user management, RESTful API endpoints, and interactive features.
 
-The application combines secure user authentication with intuitive content management features, creating a space where users can post articles, engage in discussions through comments, and participate in content curation through upvoting. The seamless integration of SQLAlchemy with Flask provides a reliable and scalable foundation for handling user-generated content.
+The application uses bcrypt for password security and Flask sessions for authentication, enabling users to post articles, engage in discussions through comments, and participate in content curation through upvoting. The database architecture uses SQLAlchemy relationships to manage user data, posts, comments, and votes efficiently, while custom Jinja filters help format dates, URLs, and text content.
 
 ### Deployed Site
 Visit the live website at: [https://pythonpress-64ffcf772c54.herokuapp.com](https://pythonpress-64ffcf772c54.herokuapp.com)
 
 ## Features
 * **User Authentication**
-  * Secure user registration and login system
-  * Password hashing with bcrypt
-  * Session management for logged-in users
-  * Protected routes requiring authentication
-  * Automatic session timeout handling
+  * Secure registration with email validation
+  * Password hashing using bcrypt
+  * Flask session-based authentication
+  * Protected routes via login_required decorator
+  * Automatic login after registration
 
 * **Content Management**
-  * Create and share news posts
-  * Edit existing posts through dashboard
-  * Delete unwanted content
-  * View post history and analytics
-  * Real-time content updates
+  * Create posts with titles and URLs
+  * Edit and delete post functionality
+  * Personal dashboard for post management
+  * Post history tracking with timestamps
+  * URL sanitization and formatting
 
 * **Interactive Features**
-  * Comment on any news post
-  * Upvote interesting content
-  * Track user engagement metrics
-  * View trending posts
-  * Personalized user dashboard
+  * Comment system with user attribution
+  * Upvoting functionality with vote counting
+  * Dynamic comment updates
+  * Post sorting by creation date
+  * User-specific content filtering
 
 * **User Interface**
-  * Clean, intuitive design
-  * Responsive layout
-  * Dynamic content loading
-  * Mobile-friendly interface
-  * Cross-browser compatibility
+  * Clean and intuitive dashboard design
+  * Real-time content updates
+  * Responsive layout for all devices
+  * Dynamic form validation feedback
+  * Streamlined post creation and editing
 
 ## Screenshots
 ![Home](assets/screenshots/PythonPress-Home.jpg) 
@@ -68,40 +68,40 @@ Visit the live website at: [https://pythonpress-64ffcf772c54.herokuapp.com](http
 ## Technical Details
 This newsfeed platform was built using the following technologies and features:
 
-* **Flask Framework**: Comprehensive web application structure:
-   * Blueprint-based route organization
-   * Custom decorators for route protection
-   * Error handling middleware
-   * Session management
-   * Template rendering with Jinja2
+* **Flask Framework**: Modular application structure:
+   * Blueprint organization for home, dashboard, and API routes
+   * Custom login_required decorator for route protection
+   * Session-based user state management
+   * Custom Jinja filters for data formatting
+   * Static file serving configuration
 
-* **Database Architecture**: SQLAlchemy ORM integration:
-   * User Model: Profile and authentication data
-   * Post Model: Content and metadata management
-   * Comment Model: Interactive discussions
-   * Vote Model: User engagement tracking
-   * Relationship management between models
+* **Database Architecture**: SQLAlchemy implementation:
+   * User Model: Username, email, and hashed password fields
+   * Post Model: Title, URL, and vote count with relationships
+   * Comment Model: Text content with user attribution
+   * Vote Model: Many-to-many relationship handling
+   * Cascading deletes for related data
 
-* **Authentication System**: Secure user management:
-   * Password hashing with bcrypt
-   * Session-based authentication
-   * Login state persistence
-   * Protected route middleware
-   * CSRF protection
+* **Authentication System**: 
+   * Bcrypt password hashing with salt
+   * Email validation with @ verification
+   * Minimum password length enforcement
+   * Session-based login tracking
+   * Protected route access control
 
-* **Frontend Integration**: Dynamic template system:
-   * Jinja2 template inheritance
-   * Responsive CSS styling
-   * JavaScript interactivity
-   * Form validation
-   * Real-time updates
+* **API Implementation**: 
+   * RESTful endpoints for CRUD operations
+   * JSON response formatting
+   * Error handling with status codes
+   * Transaction management with rollbacks
+   * Asynchronous JavaScript requests
 
-* **Security Features**: Comprehensive protection:
-   * Password encryption
-   * Input sanitization
-   * XSS prevention
-   * CSRF tokens
-   * Secure session handling
+* **Frontend Features**: 
+   * Date formatting for post timestamps
+   * URL sanitization for post links
+   * Word pluralization handling
+   * Form validation and error display
+   * Dynamic content updates without reload
 
 ## Installation
 ### Prerequisites:
