@@ -10,7 +10,7 @@
       <span>({{post.post_url}})</span>
     </div>
     <div>
-      {{post.vote_count}} point(s) by you on {{post.created_at}}
+      {{post.vote_count}} point(s) &#8226; {{post.user.username}} &#8226; {{post.created_at|format_date}}
       |
       <a href="/post/{{post.id}}">{{post.comments|length}} comment(s)</a>
     </div>
