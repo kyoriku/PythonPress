@@ -1,19 +1,5 @@
-# Python Newsfeed
-*A Python-based web app for creating and managing user-generated content.*
-
-# Table of Contents
-- [Description](#description)
-  - [Features](#features)
-  - [Purpose and Goals](#purpose-and-goals)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Questions](#questions)
-
+# PythonPress
+*A full-stack web application built with Python and Flask that enables users to create, share, and interact with news content in a social platform format*
 
 ## Built With
 [![Python](https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white)](https://www.python.org/)
@@ -22,83 +8,186 @@
 [![Jinja](https://img.shields.io/badge/Jinja-B41717.svg?style=for-the-badge&logo=Jinja&logoColor=white)](https://jinja.palletsprojects.com/en/3.1.x/)
 [![Gunicorn](https://img.shields.io/badge/Gunicorn-499848.svg?style=for-the-badge&logo=Gunicorn&logoColor=white)](https://gunicorn.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![HTML](https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS](https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
+## Table of Contents
+- [Description](#description)
+  - [Deployed Site](#deployed-site)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Technical Details](#technical-details)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Questions](#questions)
+
 ## Description
-This project is a dynamic web application built with Python and Flask that enables users to create, manage, and interact with user-generated content in a social newsfeed format. Designed for a seamless user experience, the application allows users to log in and participate in discussions by posting articles, commenting on existing posts, and engaging with content through upvotes.
+Python Newsfeed is a full-stack web application that demonstrates the power of Python web development using Flask. This platform provides a dynamic environment where users can share, discuss, and interact with news content in a social format. Built with modern Python practices and a robust SQL database backend, the application showcases the implementation of user authentication, dynamic content management, and interactive features.
 
-### Features:
-- **Home and Dashboard Rendering:** Intuitive navigation with fully functional home and dashboard pages displaying user activities like posts, comments, and upvotes.
-- **User Authentication and Sessions:** Secure login with bcrypt for password hashing. Sessions persist across page refreshes for a smooth user experience.
-- **Database Integration:** SQLAlchemy is used for managing user accounts, posts, comments, and upvotes, ensuring efficient data storage and retrieval.
-- **Dynamic Data Views:** User posts, comments, and upvotes are displayed with properly formatted dates, URLs, and pluralized words for a clean interface.
-- **Content Creation:** Logged-in users can create posts, comments, and upvote content, with changes reflected immediately.
-- **Secure Routes:** Access to features like posting and commenting is restricted to authenticated users, ensuring data privacy and protection.
+The application combines secure user authentication with intuitive content management features, creating a space where users can post articles, engage in discussions through comments, and participate in content curation through upvoting. The seamless integration of SQLAlchemy with Flask provides a reliable and scalable foundation for handling user-generated content.
 
-### Purpose and Goals:
-The goal of this project is to create a user-friendly platform for sharing ideas and fostering community discussions. By focusing on user-generated content, the application encourages creativity, collaboration, and communication among its users. Whether it's sharing the latest news, discussing personal opinions, or engaging in constructive dialogue, this application provides a space for users to connect and contribute meaningfully.
+### Deployed Site
+Visit the live website at: [https://pythonpress-64ffcf772c54.herokuapp.com](https://pythonpress-64ffcf772c54.herokuapp.com)
+
+## Features
+* **User Authentication**
+  * Secure user registration and login system
+  * Password hashing with bcrypt
+  * Session management for logged-in users
+  * Protected routes requiring authentication
+  * Automatic session timeout handling
+
+* **Content Management**
+  * Create and share news posts
+  * Edit existing posts through dashboard
+  * Delete unwanted content
+  * View post history and analytics
+  * Real-time content updates
+
+* **Interactive Features**
+  * Comment on any news post
+  * Upvote interesting content
+  * Track user engagement metrics
+  * View trending posts
+  * Personalized user dashboard
+
+* **User Interface**
+  * Clean, intuitive design
+  * Responsive layout
+  * Dynamic content loading
+  * Mobile-friendly interface
+  * Cross-browser compatibility
 
 ## Screenshots
 ![Home](assets/screenshots/byteboard-home.png) 
-*Home page displaying latest posts*
-
 ![Post](assets/screenshots/byteboard-post.png) 
-*Individual post view with comments section*
-
 ![Dashboard](assets/screenshots/byteboard-dashboard.png) 
-*User dashboard showing personal posts and activity*
-
 ![Edit Post](assets/screenshots/byteboard-edit-post.png) 
-*Edit post interface for logged-in users*
+
+## Technical Details
+This newsfeed platform was built using the following technologies and features:
+
+* **Flask Framework**: Comprehensive web application structure:
+   * Blueprint-based route organization
+   * Custom decorators for route protection
+   * Error handling middleware
+   * Session management
+   * Template rendering with Jinja2
+
+* **Database Architecture**: SQLAlchemy ORM integration:
+   * User Model: Profile and authentication data
+   * Post Model: Content and metadata management
+   * Comment Model: Interactive discussions
+   * Vote Model: User engagement tracking
+   * Relationship management between models
+
+* **Authentication System**: Secure user management:
+   * Password hashing with bcrypt
+   * Session-based authentication
+   * Login state persistence
+   * Protected route middleware
+   * CSRF protection
+
+* **Frontend Integration**: Dynamic template system:
+   * Jinja2 template inheritance
+   * Responsive CSS styling
+   * JavaScript interactivity
+   * Form validation
+   * Real-time updates
+
+* **Security Features**: Comprehensive protection:
+   * Password encryption
+   * Input sanitization
+   * XSS prevention
+   * CSRF tokens
+   * Secure session handling
 
 ## Installation
-
 ### Prerequisites:
 * Python 3.x
 * pip (Python package installer)
 * MySQL (or another SQL database)
 
 ### Setup:
-1. **Clone the Repository**
+1. Clone the Repository
    ```bash
-   git clone https://github.com/kyoriku/python-newsfeed.git 
-   cd python-newsfeed
+   git clone https://github.com/kyoriku/PythonPress.git 
    ```
 
-2. Set up a virtual environment (optional but recommended):
+2. Navigate to the project directory
+   ```bash
+   cd PythonPress
+   ```
+
+3. Set up a virtual environment
    ```bash
    python3 -m venv venv
-   . venv/bin/activate
+   source venv/bin/activate  # for macOS/Linux
+   # or
+   venv\Scripts\activate  # for Windows
    ```
 
-3. Install the required dependencies:
+4. Install dependencies
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Set up the environment variables: Create a .env file in the root directory and add the following variables:
+5. Configure environment variables
+
+   Create a `.env` file in the root directory with:
    ```bash
-   DB_URL=mysql+pymysql://<username>:<password>@localhost/python_news_db
+   DB_URL=mysql+pymysql://<username>:<password>@localhost/python_press_db
    ```
 
-   *Replace `<username>` with your MySQL username, replace `<password>` with your MySQL password*
+   *Replace `<username>` with your MySQL username, and `<password>` with your MySQL password*
 
-5. Create the database:
-   ```bash
-   CREATE DATABASE python_news_db;
+6. Initialize the database
+   ```sql
+   mysql -u root -p
+   CREATE DATABASE python_press_db;
    ```
 
-### Usage:
-1. Run the app: 
+## Usage
+1. Start the application
    ```bash
    flask run
    ```
 
-2. Access the app: Once the server is running, you can access the app by navigating to http://127.0.0.1:5000 in your browser. Check the terminal for any output messages or errors.
-   
+2. Navigate to the website
+   ```bash
+   http://127.0.0.1:5000
+   ```
+
+3. Create an account to:
+   * Share and manage your posts
+   * Engage with content through comments
+   * Upvote interesting articles
+   * Access your personal dashboard
+
 ## Contributing
-Feel free to open issues or submit pull requests to improve the application.
+Contributions are welcome! Here are ways you can help:
+
+1. Fork the repository
+2. Create a feature branch
+    ```bash
+    git checkout -b feature/YourFeature
+    ```
+3. Make your changes - this could include:
+    * Adding new features
+    * Improving the UI/UX
+    * Optimizing database queries
+    * Enhancing security
+    * Bug fixes
+4. Commit your changes
+5. Push to your branch
+6. Open a Pull Request
+
+Please ensure your contributions:
+* Follow the existing code style
+* Include appropriate error handling
+* Test all changes locally
+* Include clear descriptions in your pull request
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&logo=mit)](https://opensource.org/licenses/MIT)
